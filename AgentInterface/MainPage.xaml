@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgentInterface.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Agent Interface"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to the Agent Interface Application"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to the Agent Interface Application"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Picker x:Name="picker"
+                Title="Select a state">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Unscheduled Down</x:String>
+                        <x:String>Scheduled Down</x:String>
+                        <x:String>Nonscheduled Down</x:String>
+                        <x:String>Engineering</x:String>
+                        <x:String>Production</x:String>
+                        <x:String>Standby</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <CheckBox x:Name="BeginCheckBox"/>
+            <Label Text="Begin State"/>
+            
+            <CheckBox x:Name="EndCheckBox"/>
+            <Label Text="End State"/>
+            
+            <Button
+                x:Name="SubmitState"
+                Text="Submit"
+                SemanticProperties.Hint="Submit E10 state to downstream systems"
+                Clicked="OnSubmitButtonClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
